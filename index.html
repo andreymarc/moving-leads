@@ -284,6 +284,114 @@
       background: #4cae4c;
     }
 
+    /* MULTI-STEP FORM */
+
+    .progress {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .progress-step {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: #cfcfcf;
+      transition: background 0.3s ease;
+    }
+
+    .progress-step.active,
+    .progress-step.done {
+      background: #3f97d3;
+    }
+
+    .progress-label {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .step {
+      display: none;
+      animation: stepFade 0.25s ease;
+    }
+
+    .step.active { display: block; }
+
+    @keyframes stepFade {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .step-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #222;
+    }
+
+    .step-sub {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .field label .opt {
+      color: #888;
+      font-weight: 400;
+    }
+
+    .field-error {
+      font-size: 12.5px;
+      color: #d14343;
+      min-height: 16px;
+    }
+
+    .step-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .lead-form .step-actions button {
+      flex: 1;
+      padding: 16px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+
+    .lead-form .step-actions .btn-secondary {
+      background: white;
+      color: #444;
+      border: 2px solid #cfcfcf;
+    }
+
+    .lead-form .step-actions .btn-secondary:hover {
+      background: white;
+      border-color: #999;
+    }
+
+    .lead-form .step-actions .btn-submit {
+      padding: 20px;
+      font-size: 22px;
+    }
+
     /* FOOTER */
 
     footer {
@@ -495,76 +603,154 @@
 
         <div class="form-wrapper">
 
+          <div class="progress" aria-hidden="true">
+            <div class="progress-step" data-step="1"></div>
+            <div class="progress-step" data-step="2"></div>
+            <div class="progress-step" data-step="3"></div>
+          </div>
+          <div class="progress-label">
+            Step <span id="stepCurrent">1</span> of 3
+          </div>
+
           <form
             name="moving-leads"
             method="POST"
             data-netlify="true"
             netlify
             class="lead-form"
+            id="leadForm"
+            novalidate
           >
+            <input type="hidden" name="form-name" value="moving-leads" />
 
-            <input
-              type="hidden"
-              name="form-name"
-              value="moving-leads"
-            />
+            <!-- STEP 1 -->
+            <div class="step" data-step="1">
+              <h3 class="step-title">Where are you based?</h3>
+              <p class="step-sub">We use this to match you with leads in your service area.</p>
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-            />
+              <div class="field">
+                <label for="f-zip">Company ZIP</label>
+                <input
+                  id="f-zip"
+                  type="text"
+                  name="company_zipcode"
+                  placeholder="12345"
+                  inputmode="numeric"
+                  pattern="[0-9]{5}"
+                  required
+                  data-required
+                />
+                <div class="field-error" data-error-for="f-zip"></div>
+              </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
+              <div class="step-actions">
+                <button type="button" data-next>Next →</button>
+              </div>
+            </div>
 
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone"
-              required
-            />
+            <!-- STEP 2 -->
+            <div class="step" data-step="2">
+              <h3 class="step-title">Tell us about your company</h3>
+              <p class="step-sub">Just the basics — you can add more later.</p>
 
-            <input
-              type="text"
-              name="company_name"
-              placeholder="Company Name"
-              required
-            />
+              <div class="field">
+                <label for="f-company">Company Name</label>
+                <input
+                  id="f-company"
+                  type="text"
+                  name="company_name"
+                  placeholder="Acme Movers LLC"
+                  required
+                  data-required
+                />
+                <div class="field-error" data-error-for="f-company"></div>
+              </div>
 
-            <input
-              type="text"
-              name="company_zipcode"
-              placeholder="Company Zipcode"
-              required
-            />
+              <div class="field">
+                <label for="f-address">Company Address <span class="opt">(optional)</span></label>
+                <input
+                  id="f-address"
+                  type="text"
+                  name="company_address"
+                  placeholder="123 Main St, City, ST"
+                />
+              </div>
 
-            <input
-              type="text"
-              name="company_address"
-              placeholder="Company Address (Optional)"
-            />
+              <div class="field">
+                <label for="f-usdot">USDOT <span class="opt">(optional)</span></label>
+                <input
+                  id="f-usdot"
+                  type="text"
+                  name="usdot"
+                  placeholder="USDOT #"
+                />
+              </div>
 
-            <input
-              type="text"
-              name="usdot"
-              placeholder="USDOT (Optional)"
-            />
+              <div class="step-actions">
+                <button type="button" class="btn-secondary" data-prev>← Back</button>
+                <button type="button" data-next>Next →</button>
+              </div>
+            </div>
 
-            <textarea
-              name="comment"
-              placeholder="Comment (Optional)"
-              rows="4"
-            ></textarea>
+            <!-- STEP 3 -->
+            <div class="step" data-step="3">
+              <h3 class="step-title">How can we reach you?</h3>
+              <p class="step-sub">We'll only use this to set up your account.</p>
 
-            <button type="submit">
-              Submit
-            </button>
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input
+                  id="f-name"
+                  type="text"
+                  name="name"
+                  placeholder="Jane Doe"
+                  required
+                  data-required
+                />
+                <div class="field-error" data-error-for="f-name"></div>
+              </div>
+
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input
+                  id="f-email"
+                  type="email"
+                  name="email"
+                  placeholder="jane@company.com"
+                  required
+                  data-required
+                />
+                <div class="field-error" data-error-for="f-email"></div>
+              </div>
+
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input
+                  id="f-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="(555) 555-5555"
+                  required
+                  data-required
+                />
+                <div class="field-error" data-error-for="f-phone"></div>
+              </div>
+
+              <div class="field">
+                <label for="f-comment">Comment <span class="opt">(optional)</span></label>
+                <textarea
+                  id="f-comment"
+                  name="comment"
+                  rows="3"
+                  placeholder="Anything we should know?"
+                ></textarea>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn-secondary" data-prev>← Back</button>
+                <button type="submit" class="btn-submit">Submit</button>
+              </div>
+            </div>
 
           </form>
 
@@ -598,6 +784,99 @@
         navToggle.setAttribute('aria-expanded', 'false');
       })
     );
+
+    // Multi-step lead form
+    (function () {
+      const form = document.getElementById('leadForm');
+      if (!form) return;
+
+      const steps   = Array.from(form.querySelectorAll('.step'));
+      const bars    = Array.from(document.querySelectorAll('.progress-step'));
+      const stepNum = document.getElementById('stepCurrent');
+      const total   = steps.length;
+      let current   = 1;
+
+      function render() {
+        steps.forEach(s => {
+          s.classList.toggle('active', Number(s.dataset.step) === current);
+        });
+        bars.forEach(b => {
+          const n = Number(b.dataset.step);
+          b.classList.toggle('done', n < current);
+          b.classList.toggle('active', n === current);
+        });
+        if (stepNum) stepNum.textContent = current;
+      }
+
+      function clearError(input) {
+        const err = form.querySelector(`[data-error-for="${input.id}"]`);
+        if (err) err.textContent = '';
+        input.style.borderColor = '';
+      }
+
+      function showError(input, msg) {
+        const err = form.querySelector(`[data-error-for="${input.id}"]`);
+        if (err) err.textContent = msg;
+        input.style.borderColor = '#d14343';
+      }
+
+      function validateStep(stepEl) {
+        const inputs = stepEl.querySelectorAll('[data-required]');
+        let ok = true;
+        let firstInvalid = null;
+        inputs.forEach(input => {
+          clearError(input);
+          const val = (input.value || '').trim();
+          if (!val) {
+            showError(input, 'Required');
+            ok = false;
+            firstInvalid = firstInvalid || input;
+            return;
+          }
+          if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            showError(input, 'Enter a valid email');
+            ok = false;
+            firstInvalid = firstInvalid || input;
+            return;
+          }
+          if (input.id === 'f-zip' && !/^\d{5}$/.test(val)) {
+            showError(input, 'Enter a 5-digit ZIP');
+            ok = false;
+            firstInvalid = firstInvalid || input;
+            return;
+          }
+        });
+        if (firstInvalid) firstInvalid.focus();
+        return ok;
+      }
+
+      form.addEventListener('click', (e) => {
+        const next = e.target.closest('[data-next]');
+        const prev = e.target.closest('[data-prev]');
+        if (next) {
+          const stepEl = steps.find(s => Number(s.dataset.step) === current);
+          if (validateStep(stepEl) && current < total) {
+            current++;
+            render();
+          }
+        } else if (prev) {
+          if (current > 1) { current--; render(); }
+        }
+      });
+
+      form.addEventListener('input', (e) => {
+        if (e.target.matches('[data-required]')) clearError(e.target);
+      });
+
+      form.addEventListener('submit', (e) => {
+        const stepEl = steps.find(s => Number(s.dataset.step) === current);
+        if (!validateStep(stepEl)) {
+          e.preventDefault();
+        }
+      });
+
+      render();
+    })();
   </script>
 
 </body>
