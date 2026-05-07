@@ -74,6 +74,42 @@
       border-radius: 8px;
     }
 
+    /* MOBILE NAV TOGGLE */
+
+    .nav-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      position: relative;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: transform 0.2s ease, top 0.2s ease, background 0.15s ease;
+    }
+
+    .nav-toggle span { top: 50%; margin-top: -1.5px; }
+    .nav-toggle span::before { top: -8px; left: 0; transform: none; }
+    .nav-toggle span::after  { top:  8px; left: 0; transform: none; }
+
+    .nav-toggle.open span { background: transparent; }
+    .nav-toggle.open span::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle.open span::after  { top: 0; transform: rotate(-45deg); }
+
     /* HERO */
 
     .hero {
@@ -202,7 +238,7 @@
     }
 
     .form-wrapper {
-      max-width: 1200px;
+      max-width: 500px;
       margin: auto;
       background: #e5e5e5;
       border-radius: 20px;
@@ -261,8 +297,37 @@
 
     @media (max-width: 768px) {
 
+      .nav-toggle { display: block; }
+
+      nav { position: relative; }
+
       .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 14px 20px 18px;
+        background: white;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        border-top: 1px solid #eee;
         display: none;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li { width: 100%; }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 4px;
+      }
+
+      .nav-links .cta-button {
+        text-align: center;
+        padding: 12px 20px;
       }
 
       .hero h1 {
@@ -296,7 +361,17 @@
     <nav>
       <div class="logo">Quick Moving Leads</div>
 
-      <ul class="nav-links">
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#why-choose">Why Choose Us</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
@@ -505,6 +580,25 @@
       © 2026 Quick Moving Leads. All rights reserved.
     </p>
   </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    navLinks?.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
 
 </body>
 </html>
