@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini CRM | Quick Moving Leads</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://quickmovingleads.com/mini-crm/">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="crm-page">
+  <div class="topbar"><div class="wrap"><span>Quick Moving Leads mini CRM</span><span><a href="/">Back to site</a></span></div></div>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="/"><img src="/assets/qml-logo.png" alt="Quick Moving Leads"><span class="brand-text">Quick Moving Leads</span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button><nav class="menu" id="site-menu"><a href="/mini-crm/">Mini CRM</a><a href="/contact/">Contact</a><a href="/crm-setup/">CRM Setup</a><a href="/">Website</a></nav></div></header>
+  <section class="crm-auth" id="crm-auth">
+    <form class="lead-card crm-auth-card" id="crm-auth-form">
+      <p class="eyebrow">Password required</p>
+      <h1>Mini CRM Login</h1>
+      <p class="muted">Enter the CRM password to manage client inquiries on this browser.</p>
+      <label>Password <input id="crm-password" type="password" required autocomplete="current-password"></label>
+      <button type="submit">Unlock CRM</button>
+      <p class="fine" id="crm-auth-message"></p>
+    </form>
+  </section>
+  <main id="crm-shell" hidden>
+    <section class="page-hero crm-hero"><div class="wrap"><p class="eyebrow">Private workspace</p><h1>Client Inquiry CRM</h1><p>Track moving company inquiries, status, follow-up notes, markets, lead type, and next actions. Data is saved in this browser until you export or clear it.</p><div class="hero-actions"><button type="button" id="export-crm">Export CSV</button><button class="secondary" type="button" id="clear-crm">Clear all</button></div></div></section>
+    <section class="band soft">
+      <div class="wrap crm-layout">
+        <form class="lead-card crm-form" id="crm-form">
+          <h2>Add Inquiry</h2>
+          <p class="fine"><button class="secondary compact-button" type="button" id="lock-crm">Lock CRM</button></p>
+          <input type="hidden" id="crm-id">
+          <div class="form-grid">
+            <label>Company <input id="crm-company" required autocomplete="organization"></label>
+            <label>Contact name <input id="crm-name" autocomplete="name"></label>
+            <label>Email <input id="crm-email" type="email" autocomplete="email"></label>
+            <label>Phone <input id="crm-phone" type="tel" autocomplete="tel"></label>
+            <label>Status <select id="crm-status"><option>New</option><option>Contacted</option><option>Qualified</option><option>Proposal sent</option><option>Won</option><option>Lost</option></select></label>
+            <label>Lead type <select id="crm-lead-type"><option>Exclusive moving leads</option><option>Shared moving leads</option><option>Both exclusive and shared</option><option>Live transfer leads</option><option>CRM setup</option></select></label>
+            <label>Coverage states <span class="crm-state-grid" id="crm-markets"></span></label>
+            <label>Next follow-up <input id="crm-follow-up" type="date"></label>
+            <label class="full-span">Notes <textarea id="crm-notes"></textarea></label>
+            <button type="submit">Save Inquiry</button>
+            <button class="secondary" type="button" id="reset-crm-form">Reset Form</button>
+          </div>
+          <p class="fine">This tool stores data locally in your browser. Export CSV for backup.</p>
+        </form>
+        <div class="crm-panel">
+          <div class="crm-toolbar">
+            <label>Search <input id="crm-search" placeholder="Company, name, phone, market"></label>
+            <label>Status <select id="crm-filter"><option value="">All statuses</option><option>New</option><option>Contacted</option><option>Qualified</option><option>Proposal sent</option><option>Won</option><option>Lost</option></select></label>
+          </div>
+          <div class="crm-stats" id="crm-stats"></div>
+          <div class="crm-list" id="crm-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/main.js"></script>
+  <script src="/assets/mini-crm.js"></script>
+</body>
+</html>
