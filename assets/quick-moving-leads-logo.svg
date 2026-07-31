@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Quick Moving Leads</title>
+  <desc id="logo-desc">A blue moving truck and house icon beside the words Quick Moving Leads.</desc>
+  <defs>
+    <linearGradient id="quick-blue" x1="18" x2="392" y1="98" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1678bd"/>
+      <stop offset="1" stop-color="#3d9ee5"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M92 31 132 12l40 19v49H92V31Z" fill="#eaf6ff" stroke="#1678bd" stroke-width="7"/>
+    <path d="M83 36 132 12l49 24" stroke="#3d9ee5" stroke-width="8"/>
+    <path d="M121 44h12v12h-12zM140 44h12v12h-12z" fill="#1678bd" stroke="none"/>
+    <path d="M23 78V56c0-6 4-11 10-12l34-6 25 25v26H23Z" fill="#eaf6ff" stroke="#1678bd" stroke-width="7"/>
+    <path d="M23 76H12c-4 0-7 3-7 7v6h18" stroke="#1678bd" stroke-width="7"/>
+    <path d="M42 53h21l14 16H42V53Z" fill="#3d9ee5" stroke="none"/>
+    <circle cx="38" cy="91" r="12" fill="#fff" stroke="#0b5f9e" stroke-width="7"/>
+    <circle cx="91" cy="91" r="12" fill="#fff" stroke="#0b5f9e" stroke-width="7"/>
+    <path d="M184 34h204M184 50h151M184 66h190" stroke="url(#quick-blue)" stroke-width="6"/>
+  </g>
+  <text x="108" y="83" fill="#0b5f9e" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="-1">QUICK MOVING</text>
+  <text x="220" y="108" fill="#3d9ee5" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="9">LEADS</text>
+</svg>
