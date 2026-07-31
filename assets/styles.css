@@ -26,9 +26,9 @@ a { color: inherit; }
 .topbar .wrap { display: flex; justify-content: space-between; gap: 18px; padding: 9px 0; flex-wrap: wrap; }
 .topbar a { color: white; text-decoration: none; font-weight: 900; }
 .site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-.nav { display: flex; align-items: center; justify-content: space-between; min-height: 74px; gap: 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; min-height: 86px; gap: 24px; }
 .brand { text-decoration: none; font-weight: 900; font-size: 24px; letter-spacing: 0; color: var(--ink); display: inline-flex; align-items: center; gap: 10px; }
-.brand img { display: block; width: auto; height: 42px; max-width: 190px; object-fit: contain; }
+.brand img { display: block; width: 180px; height: auto; max-height: 76px; object-fit: contain; }
 .brand-text {
   position: absolute;
   width: 1px;
@@ -395,7 +395,7 @@ textarea { min-height: 92px; resize: vertical; }
   }
   .menu a:hover { background: var(--soft); }
   .menu .button { justify-content: center; margin-top: 4px; }
-  .brand img { height: 38px; max-width: 170px; }
+  .brand img { width: 152px; max-height: 64px; }
   .hero-grid, .split, .image-split, .grid-2, .grid-3, .footer-grid, .crm-layout, .crm-toolbar, .crm-stats { grid-template-columns: 1fr; }
   .crm-note-form { grid-template-columns: 1fr; }
   .crm-form { position: static; }
