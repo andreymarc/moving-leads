@@ -1,8 +1,10 @@
 /thank-you.html /thank-you/ 301
 /thanks /thank-you/ 301
 /success /thank-you/ 301
-/system-setup /crm-setup/ 301
-/system-setup/ /crm-setup/ 301
+/system-setup /contact/ 301
+/system-setup/ /contact/ 301
+/crm-setup /contact/ 301
+/crm-setup/ /contact/ 301
 /term-of-service /terms/ 301
 /term-of-service/ /terms/ 301
 /blog /moving-leads/ 301

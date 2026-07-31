@@ -200,7 +200,12 @@
 
 [[redirects]]
   from = "/crm-setup"
-  to = "/crm-setup/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/crm-setup/"
+  to = "/contact/"
   status = 301
 
 [[redirects]]
@@ -255,5 +260,5 @@
 
 [[redirects]]
   from = "/system-setup"
-  to = "/crm-setup/"
+  to = "/contact/"
   status = 301

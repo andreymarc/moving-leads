@@ -196,6 +196,19 @@ textarea { min-height: 92px; resize: vertical; }
 .proof-item { background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
 .proof-item strong { display: block; color: var(--blue-dark); font-size: clamp(24px, 4vw, 36px); line-height: 1; font-family: Inter, Arial, Helvetica, sans-serif; }
 .proof-item span { color: var(--muted); font-weight: 800; }
+.authority-card { display: grid; gap: 8px; }
+.authority-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 30px;
+  border-radius: 6px;
+  background: rgba(61,158,229,.14);
+  color: var(--blue-dark);
+  font-weight: 900;
+  font-size: 13px;
+}
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: start; }
 .list { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
 .list li { padding-left: 26px; position: relative; }
