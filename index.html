@@ -1,922 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta
-    name="description"
-    content="We are moving lead provider generating high quality, exclusive and shared moving leads to help moving companies grow."
-  />
-
-  <title>Quick Moving Leads - Quality Moving Leads Fast</title>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* HEADER */
-
-    header {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #3f97d3;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .cta-button {
-      background: #5cb85c;
-      color: white !important;
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-
-    /* MOBILE NAV TOGGLE */
-
-    .nav-toggle {
-      display: none;
-      width: 40px;
-      height: 40px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      position: relative;
-    }
-
-    .nav-toggle span,
-    .nav-toggle span::before,
-    .nav-toggle span::after {
-      content: "";
-      display: block;
-      width: 24px;
-      height: 3px;
-      background: #333;
-      border-radius: 2px;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: transform 0.2s ease, top 0.2s ease, background 0.15s ease;
-    }
-
-    .nav-toggle span { top: 50%; margin-top: -1.5px; }
-    .nav-toggle span::before { top: -8px; left: 0; transform: none; }
-    .nav-toggle span::after  { top:  8px; left: 0; transform: none; }
-
-    .nav-toggle.open span { background: transparent; }
-    .nav-toggle.open span::before { top: 0; transform: rotate(45deg); }
-    .nav-toggle.open span::after  { top: 0; transform: rotate(-45deg); }
-
-    /* HERO */
-
-    .hero {
-      background:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 60px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 24px;
-      margin-bottom: 30px;
-    }
-
-    .hero .cta-button {
-      display: inline-block;
-      font-size: 20px;
-      padding: 15px 35px;
-      text-decoration: none;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 80px 20px;
-    }
-
-    .section-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 42px;
-      color: #222;
-    }
-
-    /* ABOUT */
-
-    .about-content {
-      max-width: 820px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-content p {
-      font-size: 17px;
-      line-height: 1.75;
-      color: #444;
-      margin-bottom: 20px;
-    }
-
-    .about-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* FEATURES */
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .feature-item {
-      background: #f5f5f5;
-      padding: 30px;
-      border-radius: 14px;
-      text-align: center;
-      transition: 0.2s ease;
-    }
-
-    .feature-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-item h3 {
-      margin-bottom: 15px;
-      color: #3f97d3;
-    }
-
-    /* PROCESS */
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .step {
-      text-align: center;
-      padding: 30px;
-      background: #f5f5f5;
-      border-radius: 14px;
-    }
-
-    .step-number {
-      width: 60px;
-      height: 60px;
-      background: #3f97d3;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    /* FORM */
-
-    .cta-section {
-      background: #3f97d3;
-      color: white;
-    }
-
-    .cta-section h2,
-    .cta-section p {
-      text-align: center;
-    }
-
-    .cta-section p {
-      margin-bottom: 40px;
-      font-size: 20px;
-    }
-
-    .form-wrapper {
-      max-width: 500px;
-      margin: auto;
-      background: #e5e5e5;
-      border-radius: 20px;
-      padding: 30px;
-    }
-
-    .lead-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .lead-form input,
-    .lead-form textarea {
-      width: 100%;
-      padding: 20px;
-      border: 2px solid #cfcfcf;
-      border-radius: 10px;
-      font-size: 18px;
-      font-family: inherit;
-      background: #f7f7f7;
-    }
-
-    .lead-form input:focus,
-    .lead-form textarea:focus {
-      outline: none;
-      border-color: #3f97d3;
-      background: white;
-    }
-
-    .lead-form button {
-      background: #5cb85c;
-      color: white;
-      border: none;
-      padding: 22px;
-      border-radius: 10px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .lead-form button:hover {
-      background: #4cae4c;
-    }
-
-    /* MULTI-STEP FORM */
-
-    .progress {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .progress-step {
-      flex: 1;
-      height: 6px;
-      border-radius: 999px;
-      background: #cfcfcf;
-      transition: background 0.3s ease;
-    }
-
-    .progress-step.active,
-    .progress-step.done {
-      background: #3f97d3;
-    }
-
-    .progress-label {
-      text-align: center;
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-
-    .lead-form .step {
-      display: none;
-      animation: stepFade 0.25s ease;
-    }
-
-    .lead-form .step.active { display: block; }
-
-    @keyframes stepFade {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: none; }
-    }
-
-    .step-title {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #222;
-    }
-
-    .step-sub {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 18px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .field label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #444;
-    }
-
-    .field label .opt {
-      color: #888;
-      font-weight: 400;
-    }
-
-    .field-error {
-      font-size: 12.5px;
-      color: #d14343;
-      min-height: 16px;
-    }
-
-    .step-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .lead-form .step-actions button {
-      flex: 1;
-      padding: 16px;
-      font-size: 18px;
-      border-radius: 10px;
-    }
-
-    .lead-form .step-actions .btn-secondary {
-      background: white;
-      color: #444;
-      border: 2px solid #cfcfcf;
-    }
-
-    .lead-form .step-actions .btn-secondary:hover {
-      background: white;
-      border-color: #999;
-    }
-
-    .lead-form .step-actions .btn-submit {
-      padding: 20px;
-      font-size: 22px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 768px) {
-
-      .nav-toggle { display: block; }
-
-      nav { position: relative; }
-
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
-        padding: 14px 20px 18px;
-        background: white;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-        border-top: 1px solid #eee;
-        display: none;
-      }
-
-      .nav-links.open { display: flex; }
-
-      .nav-links li { width: 100%; }
-
-      .nav-links a {
-        display: block;
-        padding: 12px 4px;
-      }
-
-      .nav-links .cta-button {
-        text-align: center;
-        padding: 12px 20px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 20px;
-      }
-
-      h2 {
-        font-size: 32px;
-      }
-
-      .lead-form input,
-      .lead-form textarea {
-        padding: 16px;
-        font-size: 16px;
-      }
-
-      .lead-form button {
-        font-size: 22px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <nav>
-      <div class="logo">Quick Moving Leads</div>
-
-      <button
-        class="nav-toggle"
-        id="navToggle"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
-        <span></span>
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#why-choose">Why Choose Us</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#contact" class="cta-button">Get Started</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Get Quality Moving Leads Fast</h1>
-
-        <p>
-          Grow your moving business with high-quality,
-          real-time leads
-        </p>
-
-        <a href="#contact" class="cta-button">
-          Start Growing Today
-        </a>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="section-container">
-
-        <h2>About Quick Moving Leads</h2>
-
-        <div class="about-content">
-          <p>
-            Quick Moving Leads provides exclusive moving leads for moving companies looking to grow their business with high quality local and long distance moving jobs. We generate real time moving leads from customers actively searching for professional movers across the United States.
-          </p>
-          <p>
-            Our exclusive moving company leads are never shared with multiple movers, giving your company a better opportunity to connect, quote, and close more moves. Whether you need local moving leads, interstate moving leads, long-distance relocation leads, or nationwide moving leads, our platform helps moving companies increase bookings, improve conversion rates, and scale their business with consistent, high intent moving opportunities.
-          </p>
-          <p>
-            At Quick Moving Leads, we focus on delivering reliable moving leads that help movers grow faster and maximize return on investment.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="why-choose">
-      <div class="section-container">
-
-        <h2>Why Choose Quick Moving Leads</h2>
-
-        <div class="feature-grid">
-
-          <div class="feature-item">
-            <h3>Exclusive Leads</h3>
-            <p>
-              Receive leads that are exclusively yours,
-              eliminating competition.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <h3>Real-Time Delivery</h3>
-            <p>
-              Get leads instantly as they come in,
-              maximizing your response time.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <h3>Shared Leads</h3>
-            <p>
-              Compete with up to 4 moving companies.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <h3>Detailed Screening</h3>
-            <p>
-              Ensure leads are from people who genuinely
-              need moving services.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <h3>Customizable Filters</h3>
-            <p>
-              Tailor lead types based on location,
-              job size and more.
-            </p>
-          </div>
-
-          <div class="feature-item">
-            <h3>Grow Your Business</h3>
-            <p>
-              Expand your customer base and increase revenue.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="how-it-works">
-      <div class="section-container">
-
-        <h2>How It Works</h2>
-
-        <div class="process-steps">
-
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Sign Up</h3>
-            <p>Create an account and set your preferences.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Receive Leads</h3>
-            <p>Get qualified leads sent directly to you.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Close Deals</h3>
-            <p>Connect with leads and grow your business.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="cta-section">
-
-      <div class="section-container">
-
-        <h2>Ready to Grow Your Moving Business?</h2>
-
-        <p>
-          Start receiving high-quality moving leads today
-        </p>
-
-        <div class="form-wrapper">
-
-          <div class="progress" aria-hidden="true">
-            <div class="progress-step" data-step="1"></div>
-            <div class="progress-step" data-step="2"></div>
-            <div class="progress-step" data-step="3"></div>
-          </div>
-          <div class="progress-label">
-            Step <span id="stepCurrent">1</span> of 3
-          </div>
-
-          <form
-            name="moving-leads"
-            method="POST"
-            data-netlify="true"
-            netlify
-            class="lead-form"
-            id="leadForm"
-            novalidate
-          >
-            <input type="hidden" name="form-name" value="moving-leads" />
-
-            <!-- STEP 1 -->
-            <div class="step" data-step="1">
-              <h3 class="step-title">Where are you based?</h3>
-              <p class="step-sub">We use this to match you with leads in your service area.</p>
-
-              <div class="field">
-                <label for="f-zip">Company ZIP</label>
-                <input
-                  id="f-zip"
-                  type="text"
-                  name="company_zipcode"
-                  placeholder="12345"
-                  inputmode="numeric"
-                  pattern="[0-9]{5}"
-                  required
-                  data-required
-                />
-                <div class="field-error" data-error-for="f-zip"></div>
-              </div>
-
-              <div class="step-actions">
-                <button type="button" data-next>Next →</button>
-              </div>
-            </div>
-
-            <!-- STEP 2 -->
-            <div class="step" data-step="2">
-              <h3 class="step-title">Tell us about your company</h3>
-              <p class="step-sub">Just the basics — you can add more later.</p>
-
-              <div class="field">
-                <label for="f-company">Company Name</label>
-                <input
-                  id="f-company"
-                  type="text"
-                  name="company_name"
-                  placeholder="Acme Movers LLC"
-                  required
-                  data-required
-                />
-                <div class="field-error" data-error-for="f-company"></div>
-              </div>
-
-              <div class="field">
-                <label for="f-address">Company Address <span class="opt">(optional)</span></label>
-                <input
-                  id="f-address"
-                  type="text"
-                  name="company_address"
-                  placeholder="123 Main St, City, ST"
-                />
-              </div>
-
-              <div class="field">
-                <label for="f-usdot">USDOT <span class="opt">(optional)</span></label>
-                <input
-                  id="f-usdot"
-                  type="text"
-                  name="usdot"
-                  placeholder="USDOT #"
-                />
-              </div>
-
-              <div class="step-actions">
-                <button type="button" class="btn-secondary" data-prev>← Back</button>
-                <button type="button" data-next>Next →</button>
-              </div>
-            </div>
-
-            <!-- STEP 3 -->
-            <div class="step" data-step="3">
-              <h3 class="step-title">How can we reach you?</h3>
-              <p class="step-sub">We'll only use this to set up your account.</p>
-
-              <div class="field">
-                <label for="f-name">Name</label>
-                <input
-                  id="f-name"
-                  type="text"
-                  name="name"
-                  placeholder="Jane Doe"
-                  required
-                  data-required
-                />
-                <div class="field-error" data-error-for="f-name"></div>
-              </div>
-
-              <div class="field">
-                <label for="f-email">Email</label>
-                <input
-                  id="f-email"
-                  type="email"
-                  name="email"
-                  placeholder="jane@company.com"
-                  required
-                  data-required
-                />
-                <div class="field-error" data-error-for="f-email"></div>
-              </div>
-
-              <div class="field">
-                <label for="f-phone">Phone</label>
-                <input
-                  id="f-phone"
-                  type="tel"
-                  name="phone"
-                  placeholder="(555) 555-5555"
-                  required
-                  data-required
-                />
-                <div class="field-error" data-error-for="f-phone"></div>
-              </div>
-
-              <div class="field">
-                <label for="f-comment">Comment <span class="opt">(optional)</span></label>
-                <textarea
-                  id="f-comment"
-                  name="comment"
-                  rows="3"
-                  placeholder="Anything we should know?"
-                ></textarea>
-              </div>
-
-              <div class="step-actions">
-                <button type="button" class="btn-secondary" data-prev>← Back</button>
-                <button type="submit" class="btn-submit">Submit</button>
-              </div>
-            </div>
-
-          </form>
-
-        </div>
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>
-      © 2026 Quick Moving Leads. All rights reserved.
-    </p>
-  </footer>
-
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navLinks  = document.getElementById('navLinks');
-
-    navToggle?.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      navToggle.classList.toggle('open', open);
-      navToggle.setAttribute('aria-expanded', String(open));
-    });
-
-    navLinks?.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      })
-    );
-
-    // Multi-step lead form
-    (function () {
-      const form = document.getElementById('leadForm');
-      if (!form) return;
-
-      const steps   = Array.from(form.querySelectorAll('.step'));
-      const bars    = Array.from(document.querySelectorAll('.progress-step'));
-      const stepNum = document.getElementById('stepCurrent');
-      const total   = steps.length;
-      let current   = 1;
-
-      function render() {
-        steps.forEach(s => {
-          s.classList.toggle('active', Number(s.dataset.step) === current);
-        });
-        bars.forEach(b => {
-          const n = Number(b.dataset.step);
-          b.classList.toggle('done', n < current);
-          b.classList.toggle('active', n === current);
-        });
-        if (stepNum) stepNum.textContent = current;
-      }
-
-      function clearError(input) {
-        const err = form.querySelector(`[data-error-for="${input.id}"]`);
-        if (err) err.textContent = '';
-        input.style.borderColor = '';
-      }
-
-      function showError(input, msg) {
-        const err = form.querySelector(`[data-error-for="${input.id}"]`);
-        if (err) err.textContent = msg;
-        input.style.borderColor = '#d14343';
-      }
-
-      function validateStep(stepEl) {
-        const inputs = stepEl.querySelectorAll('[data-required]');
-        let ok = true;
-        let firstInvalid = null;
-        inputs.forEach(input => {
-          clearError(input);
-          const val = (input.value || '').trim();
-          if (!val) {
-            showError(input, 'Required');
-            ok = false;
-            firstInvalid = firstInvalid || input;
-            return;
-          }
-          if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-            showError(input, 'Enter a valid email');
-            ok = false;
-            firstInvalid = firstInvalid || input;
-            return;
-          }
-          if (input.id === 'f-zip' && !/^\d{5}$/.test(val)) {
-            showError(input, 'Enter a 5-digit ZIP');
-            ok = false;
-            firstInvalid = firstInvalid || input;
-            return;
-          }
-        });
-        if (firstInvalid) firstInvalid.focus();
-        return ok;
-      }
-
-      form.addEventListener('click', (e) => {
-        const next = e.target.closest('[data-next]');
-        const prev = e.target.closest('[data-prev]');
-        if (next) {
-          const stepEl = steps.find(s => Number(s.dataset.step) === current);
-          if (validateStep(stepEl) && current < total) {
-            current++;
-            render();
-          }
-        } else if (prev) {
-          if (current > 1) { current--; render(); }
-        }
-      });
-
-      form.addEventListener('input', (e) => {
-        if (e.target.matches('[data-required]')) clearError(e.target);
-      });
-
-      form.addEventListener('submit', (e) => {
-        const stepEl = steps.find(s => Number(s.dataset.step) === current);
-        if (!validateStep(stepEl)) {
-          e.preventDefault();
-        }
-      });
-
-      render();
-    })();
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moving Leads for Moving Companies | Quick Moving Leads</title>
+  <meta name="description" content="Quick Moving Leads provides exclusive and shared moving leads for moving companies. Get local, long-distance, packing, and storage leads in your service area.">
+  <link rel="canonical" href="https://quickmovingleads.com/">
+  <link rel="icon" href="/assets/quick-moving-leads-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Quick Moving Leads","url":"https://quickmovingleads.com/","logo":"https://quickmovingleads.com/assets/quick-moving-leads-logo.svg","email":"quickmovingleads@gmail.com","telephone":"+1-937-552-2770","areaServed":"United States","knowsAbout":["exclusive moving leads","shared moving leads","moving company lead generation","local moving leads","long-distance moving leads","lead delivery for moving companies"],"contactPoint":{"@type":"ContactPoint","telephone":"+1-937-552-2770","contactType":"sales","areaServed":"US","availableLanguage":"English"}}
   </script>
-
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Quick Moving Leads","url":"https://quickmovingleads.com/","potentialAction":{"@type":"SearchAction","target":"https://quickmovingleads.com/moving-leads/?q={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Exclusive and shared moving leads for U.S. movers</span><span><a href="tel:+19375522770">Call 937-552-2770</a> | <a href="sms:+19375522770">Text us</a></span></div></div>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="/"><img src="/assets/quick-moving-leads-logo.svg" alt="Quick Moving Leads"><span class="brand-text">Quick Moving Leads</span></a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button><nav class="menu" id="site-menu"><a href="/exclusive-moving-leads/">Exclusive</a><a href="/shared-moving-leads/">Shared</a><a href="/moving-leads/">Moving Leads</a><a href="/exclusive-vs-shared-moving-leads/">Compare</a><a href="/contact/">Contact</a><a class="button" href="#lead-form">Check Availability</a></nav></div></header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Exclusive & shared moving leads</p>
+          <h1>Moving Leads Built for Fast Follow-Up</h1>
+          <p class="hero-copy">Quick Moving Leads helps moving companies buy exclusive and shared opportunities by market, move type, and sales capacity.</p>
+          <div class="hero-actions"><a class="button" href="#lead-form">Check Lead Availability</a><a class="button secondary" href="sms:+19375522770">Text 937-552-2770</a></div>
+          <div class="checks"><span>Exclusive leads available</span><span>Shared leads available</span><span>Local and long-distance moves</span><span>Built for moving companies</span></div>
+        </div>
+        <form id="lead-form" class="lead-card" name="lead-availability" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
+          <input type="hidden" name="form-name" value="lead-availability">
+          <p class="hidden"><label>Do not fill this out: <input name="bot-field"></label></p>
+          <h2>Check Availability</h2>
+          <p class="muted">Tell us where you need leads. Submissions go to quickmovingleads@gmail.com through Netlify Forms.</p>
+          <div class="form-grid">
+            <label>Company name <input name="company" required autocomplete="organization"></label>
+            <label>Your name <input name="name" required autocomplete="name"></label>
+            <label>Email <input type="email" name="email" required autocomplete="email"></label>
+            <label>Phone <input type="tel" name="phone" required autocomplete="tel"></label>
+            <label>Lead type <select name="lead_type"><option>Exclusive moving leads</option><option>Shared moving leads</option><option>Both exclusive and shared</option><option>Plumbing leads</option><option>Electric leads</option><option>Water damage leads</option><option>Mold leads</option><option>Remodeling leads</option><option>Gutter leads</option></select></label>
+            <button type="submit">Request Lead Availability</button>
+          </div>
+          <p class="fine">You can also call or text 937-552-2770. By submitting, you agree to the <a href="/terms/">Terms</a> and acknowledge the <a href="/privacy-policy/">Privacy Policy</a>.</p>
+        </form>
+      </div>
+    </section>
+    <section class="proof-strip">
+      <div class="wrap proof-grid">
+        <div class="proof-item"><strong>500K+</strong><span>cu ft generated daily</span></div>
+        <div class="proof-item"><strong>2 Models</strong><span>exclusive and shared leads</span></div>
+        <div class="proof-item"><strong>3 Channels</strong><span>SEO, PPC, and social demand</span></div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Site authority</p><h2>Why Movers Can Trust the Lead Process</h2><p>Quick Moving Leads keeps the buying process clear: direct contact, practical market review, transparent lead models, and policy pages that explain how information is handled.</p></div>
+        <div class="grid-3 authority-grid">
+          <article class="card authority-card"><span>01</span><h3>Direct Accountability</h3><p>Moving companies can call, text, or email before choosing exclusive leads, shared leads, or both.</p></article>
+          <article class="card authority-card"><span>02</span><h3>Market Review First</h3><p>Lead availability is reviewed by service area and move type so expectations stay realistic before campaigns begin.</p></article>
+          <article class="card authority-card"><span>03</span><h3>Clear Lead Models</h3><p>Exclusive, shared, and live transfer options are explained separately so buyers understand the tradeoffs.</p></article>
+          <article class="card authority-card"><span>04</span><h3>Moving-Specific Fit</h3><p>Lead routing can account for local, long-distance, packing, storage, city, state, and route needs.</p></article>
+          <article class="card authority-card"><span>05</span><h3>Policy Visibility</h3><p>Privacy Policy and Terms pages are linked across the site for buyers who want to review how forms and contact details are handled.</p></article>
+          <article class="card authority-card"><span>06</span><h3>No Fake Guarantees</h3><p>The site avoids promises about rankings, lead volume, or closing rates until the market and follow-up process are reviewed.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head"><h2>Grow Your Moving Company Today</h2><p>Different movers need different economics. Quick Moving Leads gives you a cleaner choice between exclusivity and volume.</p></div>
+        <div class="grid-3">
+          <article class="card"><h3>Exclusive Moving Leads</h3><p>Best for movers who want less competition, higher intent, and a clearer shot at booking the job.</p><a href="/exclusive-moving-leads/">Learn about exclusive leads</a></article>
+          <article class="card"><h3>Shared Moving Leads</h3><p>Best for movers who want more opportunities at a lower cost and have a team that follows up fast.</p><a href="/shared-moving-leads/">Learn about shared leads</a></article>
+          <article class="card"><h3>Live Transfer Leads</h3><p>Best for teams that can answer quickly and handle real-time customer conversations.</p><a href="/live-transfer-moving-leads/">Learn about live transfers</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="band soft">
+      <div class="wrap image-split">
+        <div class="image-stack">
+          <img src="/assets/generated-moving-crew.jpg" alt="Happy moving crew with customer">
+          <img src="/assets/generated-sales-followup.jpg" alt="Moving lead follow-up specialist">
+        </div>
+        <div>
+          <p class="eyebrow">More than names and numbers</p>
+          <h2>Lead Flow Should Feel Predictable</h2>
+          <p>Moving companies need more than a spreadsheet of contacts. They need a steady way to test markets, fill routes, and keep sales reps focused on customers who are ready to talk.</p>
+          <ul class="list"><li>Match leads to the services your team actually handles</li><li>Use exclusive leads where close rate matters most</li><li>Add shared leads when you need extra volume</li><li>Keep the call, text, and follow-up process simple</li></ul>
+        </div>
+      </div>
+    </section>
+    <section class="band soft">
+      <div class="wrap">
+        <div class="section-head"><h2>Built for a Working Sales Floor</h2><p>Lead buying works better when your team can control markets, delivery, and follow-up.</p></div>
+        <div class="grid-3">
+          <article class="card"><h3>How It Works</h3><p>See how capture pages, market rules, email delivery, routing, and follow-up fit together.</p><a href="/how-it-works/">View process</a></article>
+          <article class="card"><h3>Post To CRM</h3><p>Lead delivery can be routed into the CRM or sales workflow your moving company already uses.</p></article>
+          <article class="card"><h3>Dedicated Account Manager</h3><p>Talk to Shai about markets, filters, lead type, and the best starting strategy for your team.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap split">
+        <div><h2>Built Around the Way Movers Actually Sell</h2><p>Moving leads only work when the buyer can reach the customer quickly, quote the right job, and serve the market requested. The site, forms, and messaging are all built around that practical sales reality.</p></div>
+        <ul class="list"><li>Target by city, state, route, and service type</li><li>Separate local, long-distance, packing, and storage intent</li><li>Use exclusive leads for priority markets</li><li>Use shared leads when volume matters</li><li>Contact by phone, text, or form</li></ul>
+        <div class="hero-actions"><a class="button secondary" href="/moving-leads-by-state/">View state availability</a></div>
+      </div>
+    </section>
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head"><h2>Lead Types</h2><p>Support pages help the site rank beyond the main keyword and give buyers clearer paths into the form.</p></div>
+        <div class="grid-2">
+          <article class="card photo-card"><img src="/assets/generated-moving-crew.jpg" alt="Happy local moving crew with customer"><div class="photo-copy"><h3>Local Moving Leads</h3><p>Customers moving within the same city, metro, or nearby service area.</p><a href="/local-moving-leads/">Local leads</a></div></article>
+          <article class="card photo-card"><img src="/assets/generated-hero-team.jpg" alt="Happy moving business team reviewing new leads"><div class="photo-copy"><h3>Long-Distance Moving Leads</h3><p>Customers planning interstate, cross-country, or longer route moves.</p><a href="/long-distance-moving-leads/">Long-distance leads</a></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="band soft">
+      <div class="wrap">
+        <div class="section-head"><h2>Home Service Lead Verticals</h2><p>Quick Moving Leads can also review availability for selected home service categories by market and delivery setup.</p></div>
+        <div class="grid-3">
+          <article class="card"><h3>Plumbing Leads</h3><p>Repair, emergency, drain, sewer, water heater, and installation inquiries.</p><a href="/plumbing-leads/">Plumbing leads</a></article>
+          <article class="card"><h3>Electric Leads</h3><p>Electrical repair, panel, lighting, troubleshooting, and install inquiries.</p><a href="/electric-leads/">Electric leads</a></article>
+          <article class="card"><h3>Water Damage Leads</h3><p>Restoration, mitigation, extraction, drying, and cleanup inquiries.</p><a href="/water-damage-leads/">Water damage leads</a></article>
+          <article class="card"><h3>Mold Leads</h3><p>Mold inspection, remediation, cleanup, and property owner inquiries.</p><a href="/mold-leads/">Mold leads</a></article>
+          <article class="card"><h3>Remodeling Leads</h3><p>Kitchen, bath, renovation, addition, and general remodeling inquiries.</p><a href="/remodeling-leads/">Remodeling leads</a></article>
+          <article class="card"><h3>Gutter Leads</h3><p>Gutter installation, replacement, cleaning, guard, and repair inquiries.</p><a href="/gutter-leads/">Gutter leads</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="cta"><div class="wrap"><div><h2>Ready to See What Markets Are Open?</h2><p>Tell us your service area and preferred lead type. We will help you decide whether exclusive, shared, or both makes the most sense.</p></div><a class="button light" href="#lead-form">Check Availability</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="/"><img src="/assets/quick-moving-leads-logo.svg" alt="Quick Moving Leads"><span class="brand-text">Quick Moving Leads</span></a><p>Moving lead generation for companies that want real opportunities, not vague marketing promises.</p></div><div><h3>Products</h3><a href="/exclusive-moving-leads/">Exclusive Leads</a><a href="/shared-moving-leads/">Shared Leads</a><a href="/moving-leads/">Moving Leads</a></div><div><h3>Resources</h3><a href="/about/">About</a><a href="/how-it-works/">How It Works</a><a href="/local-moving-leads/">Local</a><a href="/long-distance-moving-leads/">Long Distance</a></div><div><h3>Contact</h3><a href="mailto:quickmovingleads@gmail.com">quickmovingleads@gmail.com</a><a href="tel:+19375522770">937-552-2770</a><a href="sms:+19375522770">Text message</a><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a></div></div>
+  <div class="wrap footer-service-links"><h3>Lead Verticals</h3><a href="/plumbing-leads/">Plumbing Leads</a><a href="/electric-leads/">Electric Leads</a><a href="/water-damage-leads/">Water Damage Leads</a><a href="/mold-leads/">Mold Leads</a><a href="/remodeling-leads/">Remodeling Leads</a><a href="/gutter-leads/">Gutter Leads</a></div>
+  <p class="footer-partner-link">Need a moving quote? <a href="https://trustedmovingquotes.com/">Visit Trusted Moving Quotes</a></p>
+  </footer>
+  <div class="mobile-cta"><a class="button secondary" href="sms:+19375522770">Text</a><a class="button" href="tel:+19375522770">Call</a></div>
+  <script src="/assets/main.js"></script>
 </body>
 </html>

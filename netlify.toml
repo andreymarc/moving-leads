@@ -1,0 +1,264 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/mini-crm/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you/"
+  status = 301
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thank-you/"
+  status = 301
+
+[[redirects]]
+  from = "/success"
+  to = "/thank-you/"
+  status = 301
+
+[[redirects]]
+  from = "/electrician-leads"
+  to = "/electric-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/electrician-leads/"
+  to = "/electric-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/electrical-leads"
+  to = "/electric-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/electrical-leads/"
+  to = "/electric-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-leads"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/roofing-leads/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/solarpanelinstallationleads-1"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/solarpanelinstallationleads-1/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/solar-panel-installation-leads"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/solar-panel-installation-leads/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/post/all-you-need-to-know-about-shared-moving-leads"
+  to = "/shared-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/post/network-moving-leads"
+  to = "/moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/post/all-you-need-to-know-about-solar-panel-installation-leads"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/post/*"
+  to = "/moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/exclusive-moving-leads"
+  to = "/exclusive-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/shared-moving-leads"
+  to = "/shared-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/moving-leads"
+  to = "/moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/how-it-works"
+  to = "/how-it-works/"
+  status = 301
+
+[[redirects]]
+  from = "/buy-moving-leads"
+  to = "/buy-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/moving-leads-cost"
+  to = "/moving-leads-cost/"
+  status = 301
+
+[[redirects]]
+  from = "/moving-leads-by-state"
+  to = "/moving-leads-by-state/"
+  status = 301
+
+[[redirects]]
+  from = "/moving-lead-capture-pages"
+  to = "/moving-lead-capture-pages/"
+  status = 301
+
+[[redirects]]
+  from = "/live-transfer-moving-leads"
+  to = "/live-transfer-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/local-moving-leads"
+  to = "/local-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/long-distance-moving-leads"
+  to = "/long-distance-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/packing-and-storage-leads"
+  to = "/packing-and-storage-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/commercial-moving-leads"
+  to = "/moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/commercial-moving-leads/"
+  to = "/moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/exclusive-vs-shared-moving-leads"
+  to = "/exclusive-vs-shared-moving-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy-policy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/crm-setup"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/crm-setup/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/mini-crm"
+  to = "/mini-crm/"
+  status = 301
+
+[[redirects]]
+  from = "/crm-lead-delivery"
+  to = "/crm-lead-delivery/"
+  status = 301
+
+[[redirects]]
+  from = "/moving-leads-faq"
+  to = "/moving-leads-faq/"
+  status = 301
+
+[[redirects]]
+  from = "/plumbing-leads"
+  to = "/plumbing-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/electric-leads"
+  to = "/electric-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/waterdamage-leads"
+  to = "/water-damage-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/water-damage-leads"
+  to = "/water-damage-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/mold-leads"
+  to = "/mold-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/remodeling-leads"
+  to = "/remodeling-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/gutter-leads"
+  to = "/gutter-leads/"
+  status = 301
+
+[[redirects]]
+  from = "/system-setup"
+  to = "/contact/"
+  status = 301
