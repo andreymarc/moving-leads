@@ -1,53 +1,51 @@
 # Quick Moving Leads
 
-Quick Moving Leads provides moving lead generation for moving companies in the United States.
+> Quick Moving Leads provides customer inquiries to moving companies in the United States. Core offers are exclusive and shared form leads for local and long-distance moves, and live phone transfers for long-distance moves.
 
-Core pages:
-- https://quickmovingleads.com/exclusive-moving-leads/
-- https://quickmovingleads.com/shared-moving-leads/
-- https://quickmovingleads.com/moving-leads/
-- https://quickmovingleads.com/how-it-works/
-- https://quickmovingleads.com/live-transfer-moving-leads/
-- https://quickmovingleads.com/moving-leads-cost/
-- https://quickmovingleads.com/moving-leads-by-state/
-- https://quickmovingleads.com/moving-lead-capture-pages/
-- https://quickmovingleads.com/buy-moving-leads/
-- https://quickmovingleads.com/crm-lead-delivery/
-- https://quickmovingleads.com/moving-leads-faq/
-- https://quickmovingleads.com/plumbing-leads/
-- https://quickmovingleads.com/electric-leads/
-- https://quickmovingleads.com/water-damage-leads/
-- https://quickmovingleads.com/mold-leads/
-- https://quickmovingleads.com/remodeling-leads/
-- https://quickmovingleads.com/gutter-leads/
-- https://quickmovingleads.com/privacy-policy/
-- https://quickmovingleads.com/terms/
+Website: https://quickmovingleads.com/
+Sales email: quickmovingleads@gmail.com
 
-Current active offer categories:
-- Exclusive moving leads
-- Shared moving leads
-- Local moving leads
-- Long-distance moving leads
-- Packing and storage lead opportunities
-- Live transfer moving leads, subject to market availability
-- CRM or email lead delivery setup
-- State, city, metro, and route-based moving lead requests subject to availability
-- Lead capture page strategy for local, long-distance, packing, storage, state, and live transfer funnels
-- Lead capture, market matching, email delivery, CRM delivery, and fast follow-up process
-- Plumbing leads, subject to market availability
-- Electric leads for electrical contractors, subject to market availability
-- Water damage restoration leads, subject to market availability
-- Mold remediation leads, subject to market availability
-- Remodeling contractor leads, subject to market availability
-- Gutter contractor leads, subject to market availability
+## Moving lead products
 
+- [Buy moving leads](https://quickmovingleads.com/buy-moving-leads/): Buying process, provider comparison questions, and campaign requirements for moving companies.
+- [Exclusive moving leads](https://quickmovingleads.com/exclusive-moving-leads/): Inquiries distributed to one lead buyer by the provider. Local and long-distance markets can be requested.
+- [Shared moving leads](https://quickmovingleads.com/shared-moving-leads/): Inquiries that may reach multiple moving companies. Distribution limits and pricing are confirmed for the campaign.
+- [Long-distance live transfers](https://quickmovingleads.com/live-transfer-moving-leads/): Customer phone conversations connected to a moving sales team for long-distance moves. Operating hours are Monday-Friday, 9 AM-5 PM EST. Routes, qualification rules, receiving-line setup, and pricing are confirmed before launch. Local live transfers are not part of the current offer.
+- [Moving lead types](https://quickmovingleads.com/moving-leads/): Overview of lead models, move categories, and delivery resources.
 
-Contact:
-- Email: quickmovingleads@gmail.com
-- Phone/Text: 937-552-2770
+## Compare and plan
 
-Authority and trust signals:
-- Quick Moving Leads explains exclusive, shared, and live transfer moving leads separately so buyers can compare the models.
-- Lead availability should be reviewed by market, service area, move type, and follow-up capacity before a campaign starts.
-- The site links to Privacy Policy and Terms pages and uses direct phone, text, and email contact for accountability.
-- Quick Moving Leads does not promise exact rankings, lead volume, closing rates, or booked jobs without reviewing market conditions and sales follow-up.
+- [Moving leads vs. live transfers](https://quickmovingleads.com/moving-leads-vs-live-transfers/): Compare form delivery with connected calls, staffing requirements, distribution, and campaign results.
+- [Exclusive vs. shared moving leads](https://quickmovingleads.com/exclusive-vs-shared-moving-leads/): Compare inquiry distribution and competition.
+- [Moving lead and live-transfer pricing](https://quickmovingleads.com/moving-leads-cost/): Request campaign pricing and compare cost per booked move. Illustrative calculations on this page are not actual prices.
+- [Buying moving leads FAQ](https://quickmovingleads.com/moving-leads-faq/): Answers about buying, live transfers, coverage, pricing, and delivery.
+- [Local moving leads](https://quickmovingleads.com/local-moving-leads/): Form leads for local moving companies.
+- [Long-distance moving leads](https://quickmovingleads.com/long-distance-moving-leads/): Form leads and live-transfer options for long-distance routes.
+- [Moving leads by state](https://quickmovingleads.com/moving-leads-by-state/): Service areas that buyers can request. Listed locations are not guarantees of active inventory.
+- [Packing and storage leads](https://quickmovingleads.com/packing-and-storage-leads/): Related moving service inquiries, subject to availability.
+
+## Delivery and contact
+
+- [How it works](https://quickmovingleads.com/how-it-works/): Capture, market review, delivery, and follow-up.
+- [CRM and email delivery](https://quickmovingleads.com/crm-lead-delivery/): Delivery compatibility and setup requirements for a buyer's workflow.
+- [Lead capture pages](https://quickmovingleads.com/moving-lead-capture-pages/): Moving inquiry capture page capabilities.
+- [Request leads](https://quickmovingleads.com/contact/): Submit company and contact details to review availability and pricing.
+- [About Quick Moving Leads](https://quickmovingleads.com/about/): Business information and direct email contact.
+
+## Campaign terms
+
+Pricing, availability, minimum commitments, qualification requirements, acceptance rules, and credits are determined by the applicable campaign agreement. A purchased lead or transfer is an opportunity, not a guaranteed booking. Exclusive distribution does not establish that the customer has never contacted another mover independently. Live transfer describes delivery and does not establish exclusivity by itself.
+
+- [Terms](https://quickmovingleads.com/terms/)
+- [Privacy Policy](https://quickmovingleads.com/privacy-policy/)
+
+## Additional service categories
+
+- [Plumbing leads](https://quickmovingleads.com/plumbing-leads/)
+- [Electric leads](https://quickmovingleads.com/electric-leads/)
+- [Water damage leads](https://quickmovingleads.com/water-damage-leads/)
+- [Mold leads](https://quickmovingleads.com/mold-leads/)
+- [Remodeling leads](https://quickmovingleads.com/remodeling-leads/)
+- [Gutter leads](https://quickmovingleads.com/gutter-leads/)
+
+Additional service categories are reviewed separately by market and availability.
