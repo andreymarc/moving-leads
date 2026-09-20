@@ -28,7 +28,7 @@ a { color: inherit; }
 .site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .nav { display: flex; align-items: center; justify-content: space-between; min-height: 86px; gap: 24px; }
 .brand { text-decoration: none; font-weight: 900; font-size: 24px; letter-spacing: 0; color: var(--ink); display: inline-flex; align-items: center; gap: 10px; }
-.brand img { display: block; width: 180px; height: auto; max-height: 76px; object-fit: contain; }
+.brand img { display: block; width: 180px; max-width: 100%; height: auto; aspect-ratio: 12 / 5; object-fit: contain; }
 .brand-text {
   position: absolute;
   width: 1px;
@@ -223,6 +223,7 @@ textarea { min-height: 92px; resize: vertical; }
 .footer { background: var(--navy); color: white; padding: 42px 0; border-top: 5px solid var(--blue); }
 .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 24px; }
 .footer a { display: block; color: rgba(255,255,255,.78); text-decoration: none; margin: 8px 0; }
+.footer .brand { display: inline-flex; padding: 10px; background: white; border-radius: 6px; }
 .footer p { color: rgba(255,255,255,.72); }
 .footer-service-links {
   display: flex;
@@ -257,6 +258,36 @@ textarea { min-height: 92px; resize: vertical; }
   text-underline-offset: 3px;
 }
 .mobile-cta { display: none; }
+.hero h1, .page-hero h1 { font-size: 56px; }
+.page-hero h1 { margin-bottom: 16px; }
+.page-hero p.eyebrow { font-size: 13px; letter-spacing: 0; }
+.breadcrumbs { padding-top: 18px; padding-bottom: 18px; font-size: 14px; color: var(--muted); }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 8px 14px; list-style: none; margin: 0; padding: 0; }
+.breadcrumbs li + li::before { content: "/"; margin-right: 14px; color: var(--muted); }
+.breadcrumbs a { text-underline-offset: 3px; }
+.fact-list { margin: 0; }
+.fact-list > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.fact-list dt { font-weight: 800; }
+.fact-list dd { margin: 0; color: var(--muted); }
+.process-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 40px; padding-left: 24px; margin: 0; }
+.process-list li { padding-left: 8px; }
+.process-list li::marker, .steps li::marker { color: var(--blue-dark); font-weight: 800; }
+.steps { padding-left: 24px; }
+.steps li { padding-left: 5px; margin-bottom: 12px; }
+.section-note { margin-top: 24px; }
+.compare-table caption { text-align: left; padding: 16px; font-weight: 800; }
+.compare-table tbody th { background: white; }
+.footer-buyer-links { margin-top: 26px; }
+.footer-buyer-links h3 { font-size: 17px; }
+.footer-buyer-links nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.footer-buyer-links a { font-size: 14px; }
+.faq details p { max-width: 900px; margin-top: 14px; }
+@media (max-width: 760px) {
+  .hero h1, .page-hero h1 { font-size: 40px; }
+  .page-hero { padding: 36px 0; }
+  .page-hero p { font-size: 17px; }
+  .process-list { grid-template-columns: 1fr; }
+}
 .crm-page { background: var(--soft); }
 .crm-auth {
   min-height: calc(100vh - 118px);
@@ -380,7 +411,7 @@ textarea { min-height: 92px; resize: vertical; }
 .crm-note-form textarea { min-height: 64px; }
 .crm-note-form button { min-height: 44px; }
 
-@media (max-width: 860px) {
+@media (max-width: 1040px) {
   .nav { position: relative; min-height: 66px; }
   .menu-toggle { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
   .menu {
@@ -408,7 +439,7 @@ textarea { min-height: 92px; resize: vertical; }
   }
   .menu a:hover { background: var(--soft); }
   .menu .button { justify-content: center; margin-top: 4px; }
-  .brand img { width: 152px; max-height: 64px; }
+  .brand img { width: 152px; }
   .hero-grid, .split, .image-split, .grid-2, .grid-3, .footer-grid, .crm-layout, .crm-toolbar, .crm-stats { grid-template-columns: 1fr; }
   .crm-note-form { grid-template-columns: 1fr; }
   .crm-form { position: static; }
@@ -421,7 +452,7 @@ textarea { min-height: 92px; resize: vertical; }
   .band { padding: 48px 0; }
   .mobile-cta {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     position: fixed;
     bottom: 0;
     left: 0;

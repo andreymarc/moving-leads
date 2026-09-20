@@ -15,7 +15,7 @@
 
 ## Tracking
 - Add analytics before launch if available.
-- Track form submissions, phone clicks, text clicks, and CRM setup submissions.
+- Track form submissions and email clicks.
 
 ## Security
 - Treat the Mini CRM as a local browser tool only until a secure backend is added.

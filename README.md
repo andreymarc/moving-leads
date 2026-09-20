@@ -20,4 +20,3 @@ This is a static lead-generation site for `quickmovingleads.com`.
 ## Contact CTAs
 
 - Email: `quickmovingleads@gmail.com`
-- Call/Text: `937-552-2770`
